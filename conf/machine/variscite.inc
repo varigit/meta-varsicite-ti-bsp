@@ -20,6 +20,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
 	kmod \
 	networkmanager \
 	packagegroup-tools-bluetooth \
+	bluealsa \
 	pm-utils \
 	rng-tools \
 	wpa-supplicant \
