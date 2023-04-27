@@ -4,17 +4,17 @@
 #
 
 # GPIO pin to supply 3.3V WIFI voltage
-WIFI_3V3_GPIO="gpiochip2 54"
+WIFI_3V3_GPIO="gpiochip1 54"
 
 # GPIO pin to enable WIFI module
-WIFI_EN_GPIO="gpiochip2 59"
+WIFI_EN_GPIO="gpiochip1 59"
 
 # GPIO pin to enable BT module
-BT_EN_GPIO="gpiochip2 60"
+BT_EN_GPIO="gpiochip1 60"
 
 # GPIO pin to control routing of UART signals
 # to BT module or SOM connector on DART-MX8M-MINI
-BT_BUF_GPIO="gpiochip2 53"
+BT_BUF_GPIO="gpiochip1 53"
 
 # WIFI MMC host
 WIFI_MMC_HOST=fa20000.mmc
