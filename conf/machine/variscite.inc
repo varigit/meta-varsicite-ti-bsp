@@ -31,6 +31,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
 
 KERNEL_IMAGETYPES = "Image"
 IMAGE_FSTYPES = "wic.bmap wic.zst tar.zst"
+IMAGE_FSTYPES:remove = "tar.xz.md5"
 
 # Wayland based distros add systemd to DISTRO_FEATURES
 # Remove sysvinit or systemd based on DISTRO_FEATURES to avoid conflicts
