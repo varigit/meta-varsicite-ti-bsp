@@ -19,7 +19,7 @@ FILES:${PN} = " \
 			'${sysconfdir}/init.d ${sysconfdir}/rcS.d ${sysconfdir}/rc2.d ${sysconfdir}/rc3.d ${sysconfdir}/rc4.d ${sysconfdir}/rc5.d', d)} \
 "
 
-RDEPENDS:${PN} = "i2c-tools base-files libgpiod-tools"
+RDEPENDS:${PN} = "i2c-tools base-files libgpiod-tools var-gpio-utils"
 
 S = "${WORKDIR}"
 
