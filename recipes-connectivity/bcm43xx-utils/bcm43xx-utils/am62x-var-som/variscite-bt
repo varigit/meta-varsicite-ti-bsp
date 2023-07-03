@@ -3,12 +3,17 @@
 # Activate Bluetooth on Variscite VAR-SOM-AM62
 #
 
+. /etc/gpiochip
+
+# Get gpiochip from main_gpio0 address
+main_gpio0=$(get_gpiochip "600000.gpio")
+
 # GPIO pin to enable BT module
-BT_EN_GPIO="gpiochip1 60"
+BT_EN_GPIO="${main_gpio0} 60"
 
 # GPIO pin to control routing of UART signals
 # to BT module or SOM connector
-BT_BUF_GPIO="gpiochip1 53"
+BT_BUF_GPIO="${main_gpio0} 53"
 
 # UART device connected to BT module
 BT_TTY_DEV=/dev/ttyS5
