@@ -18,11 +18,28 @@ BT_BUF_GPIO="${main_gpio0} 53"
 # UART device connected to BT module
 BT_TTY_DEV=/dev/ttyS5
 
+# Sterling LWB BT firmware
+BT_FIRMWARE_LWB=/lib/firmware/brcm/BCM43430A1.hcd
+
 # Sterling LWB5 BT firmware
-BT_FIRMWARE=/lib/firmware/brcm/BCM4335C0.hcd
+BT_FIRMWARE_LWB5=/lib/firmware/brcm/BCM4335C0.hcd
+
+# Sterling LWB5 WIFI SDIO ID
+WIFI_5G_SDIO_ID=0x4339
 
 # WIFI SDIO ID file
 WIFI_SDIO_ID_FILE=/sys/class/net/wlan0/device/device
+
+# Set BT firmware based on WIFI SDIO ID
+bt_set_firmware()
+{
+	# Check if WIFI SDIO ID matches Sterling LWB5 SDIO ID
+	if [ "$(cat ${WIFI_SDIO_ID_FILE})" = "${WIFI_5G_SDIO_ID}" ]; then
+		BT_FIRMWARE=${BT_FIRMWARE_LWB5}
+	else
+		BT_FIRMWARE=${BT_FIRMWARE_LWB}
+	fi
+}
 
 # Check if WIFI+BT combo module is available
 bt_found()
@@ -59,6 +76,9 @@ bt_start()
 
 	# Enable BT hardware
 	bt_enable
+
+	# Set BT firmware file
+	bt_set_firmware
 
 	# Load rfcomm driver if it is a module
 	RFCOMM_PATH="/lib/modules/$(uname -r)/kernel/net/bluetooth/rfcomm/rfcomm.ko"
