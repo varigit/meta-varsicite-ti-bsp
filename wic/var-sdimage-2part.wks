@@ -3,5 +3,5 @@
 # Boot files are located in the first vfat partition with extra reserved space.
 # Rootfs partition starts at offset 135M to allow room for U-Boot environment.
 
-part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 1024 --extra-space 100M --use-uuid
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 1024 --fixed-size 128M --use-uuid
 part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 1024 --use-uuid --offset 135M
