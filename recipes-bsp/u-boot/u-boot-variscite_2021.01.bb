@@ -8,4 +8,4 @@ SRC_URI += "file://fw_env.config"
 UBOOT_GIT_URI = "git://github.com/varigit/ti-u-boot"
 
 BRANCH = "ti-u-boot-2021.01_var01"
-SRCREV = "84a6ade02763e79ec6e7286e8024ab87de320f0f"
+SRCREV = "0781fb871ef222c495ceceaee7b989eee67cf8dc"
