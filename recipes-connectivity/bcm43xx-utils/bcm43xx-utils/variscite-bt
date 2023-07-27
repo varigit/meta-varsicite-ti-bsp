@@ -1,6 +1,0 @@
-#!/bin/sh -e
-#
-# Placeholder script to activate Bluetooth
-#
-
-exit 0
