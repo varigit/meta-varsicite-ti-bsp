@@ -25,6 +25,11 @@ SRCREV = "bdf4726d4f7fbe485894748b215c7427b683f82d"
 PV = "5.10.168+git${SRCPV}"
 KBUILD_DEFCONFIG = "am62x_var_defconfig"
 
+BRANCH:am335x-var-som = "ti-linux-5.10.y_08.02.00.006_var01"
+SRCREV:am335x-var-som = "174ac69a9c57c1aeaebaa5b4b72d8b159ae2ce0f"
+PV:am335x-var-som = "5.10.100+git${SRCPV}"
+KBUILD_DEFCONFIG:am335x-var-som = "am335x_var_defconfig"
+
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
 PR = "${MACHINE_KERNEL_PR}"
