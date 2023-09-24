@@ -10,6 +10,7 @@ PREFERRED_RPROVIDER_u-boot-default-env:var-som = "u-boot-variscite"
 PREFERRED_PROVIDER_virtual/bootloader:var-som = "u-boot-variscite"
 PREFERRED_PROVIDER_u-boot:var-som = "u-boot-variscite"
 
+ASSUME_PROVIDED:remove += "nativesdk-perl"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
 	gptfdisk \
