@@ -1,11 +1,11 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " file://pvrsrvkm.rules"
 
 PACKAGECONFIG ??= "udev"
 PACKAGECONFIG[udev] = ",,,udev"
 
-do_install_append () {
+do_install:append () {
     without_sysvinit=${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', 'false', 'true', d)}
     with_udev=${@bb.utils.contains('PACKAGECONFIG', 'udev', 'true', 'false', d)}
 

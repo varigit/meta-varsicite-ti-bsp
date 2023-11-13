@@ -13,7 +13,7 @@ require recipes-kernel/linux/ti-kernel.inc
 DEPENDS += "gmp-native libmpc-native"
 
 # Look in the generic major.minor directory for files
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-5.10:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-5.10:"
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT} \
 		      ${EXTRA_DTC_ARGS}"
@@ -31,7 +31,7 @@ PV:am335x-var-som = "5.10.100+git${SRCPV}"
 KBUILD_DEFCONFIG:am335x-var-som = "am335x_var_defconfig"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
-MACHINE_KERNEL_PR_append = "b"
+MACHINE_KERNEL_PR:append = "b"
 PR = "${MACHINE_KERNEL_PR}"
 
 KERNEL_GIT_URI = "git://github.com/varigit/ti-linux-kernel"
@@ -45,10 +45,10 @@ module_conf_rpmsg_client_sample = "blacklist rpmsg_client_sample"
 module_conf_ti_k3_r5_remoteproc = "softdep ti_k3_r5_remoteproc pre: virtio_rpmsg_bus"
 module_conf_ti_k3_dsp_remoteproc = "softdep ti_k3_dsp_remoteproc pre: virtio_rpmsg_bus"
 KERNEL_MODULE_PROBECONF += "rpmsg_client_sample ti_k3_r5_remoteproc ti_k3_dsp_remoteproc"
-KERNEL_MODULE_AUTOLOAD_append_j7 = " rpmsg_kdrv_switch"
+KERNEL_MODULE_AUTOLOAD:append:j7 = " rpmsg_kdrv_switch"
 
 # ported from oe-core/meta/classes/kernel-yocto.bbclass
-do_configure_prepend() {
+do_configure:prepend() {
 	if [ -n "${KBUILD_DEFCONFIG}" ]; then
 		if [ -f "${S}/arch/${ARCH}/configs/${KBUILD_DEFCONFIG}" ]; then
 			if [ -f "${WORKDIR}/defconfig" ]; then
