@@ -7,28 +7,19 @@ inherit kernel
 
 DEFCONFIG_BUILDER = "${S}/ti_config_fragments/defconfig_builder.sh"
 require recipes-kernel/linux/setup-defconfig.inc
-require recipes-kernel/linux/kernel-rdepends.inc
 require recipes-kernel/linux/ti-kernel.inc
 
 DEPENDS += "gmp-native libmpc-native"
-
-# Look in the generic major.minor directory for files
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-5.10:"
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT} \
 		      ${EXTRA_DTC_ARGS}"
 
 S = "${WORKDIR}/git"
 
-BRANCH = "ti-linux-5.10.y_var01"
-SRCREV = "bdf4726d4f7fbe485894748b215c7427b683f82d"
-PV = "5.10.168+git${SRCPV}"
+BRANCH = "ti-linux-6.1.y_var01"
+SRCREV = "792f48186eee89b63ac989a433092e20cb21d19e"
+PV = "6.1.33+git${SRCPV}"
 KBUILD_DEFCONFIG = "am62x_var_defconfig"
-
-BRANCH:am335x-var-som = "ti-linux-5.10.y_08.02.00.006_var01"
-SRCREV:am335x-var-som = "174ac69a9c57c1aeaebaa5b4b72d8b159ae2ce0f"
-PV:am335x-var-som = "5.10.100+git${SRCPV}"
-KBUILD_DEFCONFIG:am335x-var-som = "am335x_var_defconfig"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR:append = "b"
@@ -68,3 +59,5 @@ do_configure:prepend() {
 		fi
 	fi
 }
+
+COMPATIBLE_MACHINE = "(am62x-var-som)"
