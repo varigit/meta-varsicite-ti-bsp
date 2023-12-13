@@ -21,6 +21,9 @@ SRCREV = "792f48186eee89b63ac989a433092e20cb21d19e"
 PV = "6.1.33+git${SRCPV}"
 KBUILD_DEFCONFIG = "am62x_var_defconfig"
 
+# Do not put dtb in ti subdir
+KERNEL_DTBVENDORED = "0"
+
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR:append = "b"
 PR = "${MACHINE_KERNEL_PR}"
