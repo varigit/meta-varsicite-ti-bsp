@@ -29,6 +29,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " \
 	wireless-regdb-static \
 	u-boot-fw-utils \
 	u-boot-default-env \
+	${@bb.utils.contains('MACHINE_FEATURES', 'bootloader-splash', \
+		'u-boot-splash','', d)} \
 "
 
 KERNEL_IMAGETYPES = "Image"
