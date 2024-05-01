@@ -18,7 +18,7 @@ S = "${WORKDIR}/git"
 
 BRANCH = "ti-linux-6.1.y_var01"
 SRCREV = "792f48186eee89b63ac989a433092e20cb21d19e"
-PV = "6.1.33+git${SRCPV}"
+PV = "6.1.46+git${SRCPV}"
 KBUILD_DEFCONFIG = "am62x_var_defconfig"
 
 # Do not put dtb in ti subdir
