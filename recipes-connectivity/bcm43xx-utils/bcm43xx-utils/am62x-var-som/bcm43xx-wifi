@@ -64,7 +64,7 @@ wifi_up()
 
 	# WIFI_3V3 up
 	gpioset ${WIFI_3V3_GPIO}=1
-	usleep 10000
+	sleep 0.01
 
 	# WLAN_EN up
 	gpioset ${WIFI_EN_GPIO}=1
@@ -76,7 +76,7 @@ wifi_up()
 	gpioset ${BT_BUF_GPIO}=0
 
 	# Wait at least 150ms
-	usleep 200000
+	sleep 0.2
 
 	# BT_BUF down
 	gpioset ${BT_BUF_GPIO}=1
@@ -108,7 +108,7 @@ wifi_down()
 
 	# BT_EN down
 	gpioset ${BT_EN_GPIO}=0
-	usleep 10000
+	sleep 0.01
 
 	# WIFI_3V3 down
 	gpioset ${WIFI_3V3_GPIO}=0
