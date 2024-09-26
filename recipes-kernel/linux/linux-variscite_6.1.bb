@@ -16,9 +16,9 @@ KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT} \
 
 S = "${WORKDIR}/git"
 
-BRANCH = "ti-linux-6.1.y_var01"
-SRCREV = "ff7deb28804cb5feeef0e5e51fd8acae58f870f0"
-PV = "6.1.46+git${SRCPV}"
+BRANCH = "ti-linux-6.1.y_09.02.01.10_var01"
+SRCREV = "62548c6d33d9a14a1960a856bab0ac58218c43a9"
+PV = "6.1.83+git${SRCPV}"
 KBUILD_DEFCONFIG = "am62x_var_defconfig"
 
 # Do not put dtb in ti subdir
